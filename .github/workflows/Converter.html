@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Conversion</title>
+    <style>
+        /* Basic reset */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f7f1e1; /* Light cream background */
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Coffee-themed navigation bar */
+        nav {
+            background-color: #6f4f37; /* Coffee brown color */
+            padding: 15px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #f1e0c6; /* Cream color for text */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d2691e; /* Lighter coffee color for hover effect */
+            transform: scale(1.1); /* Slightly enlarge text on hover */
+        }
+
+        /* Layout container */
+        .container {
+            display: flex;
+            flex: 1; /* Ensures the container takes the remaining height */
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            margin: 20px;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 400px; /* Fixed width for the sidebar */
+            background-color: #6f4f37; /* Coffee brown color */
+            padding: 20px;
+            color: #f1e0c6; /* Cream color for text */
+            border-radius: 8px;
+            margin-right: 20px;
+            height: 100%; /* Full height */
+            overflow-y: auto; /* Enable scrolling if content overflows */
+        }
+
+        .sidebar h3 {
+            text-align: center;
+        }
+
+        .sidebar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .sidebar table, .sidebar th, .sidebar td {
+            border: 1px solid #f1e0c6;
+        }
+
+        .sidebar th, .sidebar td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar th {
+            background-color: #d2691e; /* Lighter coffee color */
+            color: #fff;
+        }
+
+        /* Main content area */
+        .main-content {
+            width: 450px; /* Fixed width for the main content */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 100%; /* Make the input take up the full width of its container */
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        /* Footer or other content */
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Service.html">Services</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content with Sidebar -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Conversion Table (0 to 15)</h3>
+            <table>
+                <tr>
+                    <th>Decimal</th>
+                    <th>Binary</th>
+                    <th>Hexadecimal</th>
+                    <th>Octal</th>
+                </tr>
+                <!-- Generate rows from 0 to 15 -->
+                <script>
+                    const table = document.querySelector('.sidebar table');
+                    for (let i = 0; i <= 15; i++) {
+                        const binary = i.toString(2).padStart(4, '0'); // Ensure 4 digits in binary
+                        const hex = i.toString(16).toUpperCase(); // Hexadecimal (uppercase)
+                        const octal = i.toString(8); // Octal
+                        const row = `
+                            <tr>
+                                <td>${i}</td>
+                                <td>${binary}</td>
+                                <td>${hex}</td>
+                                <td>${octal}</td>
+                            </tr>
+                        `;
+                        table.innerHTML += row;
+                    }
+                </script>
+            </table>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1>Number System Conversion</h1>
+            
+            <label for="decimalInput">Enter a Decimal Number: </label>
+            <input type="number" id="decimalInput" oninput="convertNumber()">
+            
+            <h3>Converted Numbers:</h3>
+            <p>Binary: <span id="binaryOutput"></span></p>
+            <p>Decimal: <span id="decimalOutput"></span></p>
+            <p>Hexadecimal: <span id="hexadecimalOutput"></span></p>
+            <p>Octal: <span id="octalOutput"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function convertNumber() {
+            // Get the decimal number from input
+            const decimal = document.getElementById('decimalInput').value;
+            
+            // Convert to different systems
+            const binary = parseInt(decimal).toString(2);
+            const hex = parseInt(decimal).toString(16).toUpperCase();
+            const octal = parseInt(decimal).toString(8);
+
+            // Display the converted numbers in the main content
+            document.getElementById('binaryOutput').textContent = binary;
+            document.getElementById('decimalOutput').textContent = decimal;
+            document.getElementById('hexadecimalOutput').textContent = hex;
+            document.getElementById('octalOutput').textContent = octal;
+        }
+    </script>
+
+</body>
+</html>
