@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Converter</title>
+    <style>
+        /* Basic reset */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f7f1e1; /* Light cream background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Coffee-themed navigation bar */
+        nav {
+            background-color: #5e381a; /* Coffee brown color */
+            padding: 20px 40px;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: #f1e0c6; /* Light cream text */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d2691e; /* Lighter coffee color on hover */
+            transform: scale(1.1); /* Slightly enlarge text on hover */
+        }
+
+        /* Welcome section styling */
+        .welcome-section {
+            background: linear-gradient(135deg, #6f4f37, #744219); /* Coffee gradient */
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            flex: 1; /* Take remaining space */
+        }
+
+        .welcome-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .converter-button {
+            background-color: #f1e0c6; /* Light cream background */
+            color: #6f4f37; /* Coffee brown text */
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+
+        .converter-button:hover {
+            background-color: #d2691e; /* Darker coffee color */
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5e381a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Simple container for icons */
+        .icons {
+            margin-top: 30px;
+        }
+
+        .icons i {
+            font-size: 30px;
+            color: #f1e0c6;
+            margin: 0 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .icons i:hover {
+            color: #d2691e;
+            transform: scale(1.1);
+        }
+
+    </style>
+    <!-- Link to FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Service.html">Services</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section" id="home">
+        <h1>Welcome to the Number System Converter</h1>
+        <p>Convert Decimal Numbers to Binary, Hexadecimal, and Octal effortlessly.</p>
+        
+        <!-- Button to take the user to the converter -->
+        <a href="converter.html" class="converter-button">Start Converting</a>
+        
+        <!-- Icons for Binary, Decimal, Hexadecimal, and Octal -->
+        <div class="icons">
+            <i class="fas fa-cogs"></i>
+            <i class="fas fa-calculator"></i>
+            <i class="fas fa-code"></i>
+            <i class="fas fa-sort-numeric-up"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Number System Converter | Designed Andrew Jomuad ☕</p>
+    </footer>
+
+</body>
+</html>
